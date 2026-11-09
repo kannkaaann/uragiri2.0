@@ -1,5 +1,8 @@
 name: build
 on: [push, workflow_dispatch]
+defaults:
+  run:
+    working-directory: uragiri_keys_mod_src_Ver2.1/uragiri_keys
 jobs:
   build:
     runs-on: ubuntu-24.04
@@ -13,5 +16,5 @@ jobs:
       - run: chmod +x gradlew && ./gradlew build --no-daemon --stacktrace
       - uses: actions/upload-artifact@v4
         with:
-          name: uragiri_keys-jar
-          path: build/libs/uragiri_keys-1.0.0.jar
+          name: uragiri_keys-jar-Ver2.1.0
+          path: uragiri_keys_mod_src_Ver2.1/uragiri_keys/build/libs/uragiri_keys-2.1.0.jar
